@@ -1,7 +1,10 @@
 # Corso git
 
+## Indice
+
 <!-- TOC -->
 * [Corso git](#corso-git)
+  * [Indice](#indice)
   * [01 git init](#01-git-init)
   * [02 git clone](#02-git-clone)
   * [03 git status](#03-git-status)
@@ -20,6 +23,7 @@ Digita `ls -a` o apri esplora risorse, noterai che c'è una :new: nuova cartella
 ![git init](images/git-init.png)   
 Questa conterrà tutte le informazioni necessarie per versionare il nostro repository.
 
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#02-git-clone)
 
 ## 02 git clone
 
@@ -32,11 +36,13 @@ Questa conterrà tutte le informazioni necessarie per versionare il nostro repos
 Se entriamo nella cartella `emoji-cheat-sheet`, notiamo come prima cosa che c'è già una cartella `.git`.   
 Ciò significa che questo progetto è stato precedentemente inizializzato con `git init` e poi reso disponibile online.   
 
-Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto come nella sezione precedente.
+Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto come spiegato [nella sezione precedente](#01-git-init)).
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#03-git-status)
 
 ## 03 git status
 
-* Apriamo il progetto precedento scaricato
+* Apriamo il progetto precedentemente scaricato
 * Apriamo git bash :computer:
 * Digitiamo `git status`
 ![git status](images/git-status.png)
@@ -45,4 +51,4 @@ Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto c
   :two: Il nostro branch è allineato con `origin/master`    
   :three: Non abbiamo nulla da aggiungere `nothing to commit, working tree clean`    
 
-
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#03-git-status)
