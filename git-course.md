@@ -3,28 +3,32 @@
 ## Indice
 
 <!-- TOC -->
+
 * [Corso git](#corso-git)
-  * [Indice](#indice)
-  * [01 git init](#01-git-init)
-  * [02 git clone](#02-git-clone)
-  * [03 git status](#03-git-status)
-    * [Stati possibili](#stati-possibili)
-      * [Unmodified](#unmodified)
-      * [Modified](#modified)
-      * [Untracked](#untracked)
-  * [04 git add](#04-git-add)
-    * [Staged](#staged)
-  * [05 git commit](#05-git-commit)
-  * [Esercizio 1](#esercizio-1)
-    * [Consegna](#consegna)
-  * [06 git rm](#06-git-rm)
-    * [Eliminazione file](#eliminazione-file)
-    * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
-  * [07 git mv](#07-git-mv)
-    * [Rinominare un file](#rinominare-un-file)
-    * [Spostiamo un file](#spostiamo-un-file)
-  * [Soluzioni](#soluzioni)
-    * [Soluzione Esercizio 1](#soluzione-esercizio-1)
+    * [Indice](#indice)
+    * [01 git init](#01-git-init)
+    * [02 git clone](#02-git-clone)
+    * [03 git status](#03-git-status)
+        * [Stati possibili](#stati-possibili)
+            * [Unmodified](#unmodified)
+            * [Modified](#modified)
+            * [Untracked](#untracked)
+    * [04 git add](#04-git-add)
+        * [Staged](#staged)
+    * [05 git commit](#05-git-commit)
+    * [Esercizio 1](#esercizio-1)
+        * [Consegna](#consegna)
+    * [06 git rm](#06-git-rm)
+        * [Eliminazione file](#eliminazione-file)
+        * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
+    * [07 git mv](#07-git-mv)
+        * [Rinominare un file](#rinominare-un-file)
+        * [Spostare un file](#spostare-un-file)
+    * [08 git reset](#08-git-reset)
+    * [09 git checkout](#09-git-checkout)
+    * [Soluzioni](#soluzioni)
+        * [Soluzione Esercizio 1](#soluzione-esercizio-1)
+
 <!-- TOC -->
 
 ## 01 git init
@@ -36,12 +40,11 @@ Creiamo il nostro primo repository git:
   con [windows esplora risorse](https://support.microsoft.com/it-it/windows/comprimere-e-decomprimere-file-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)
   , [7z](https://www.7-zip.org/download.html) o [tramite terminale (unzip)](https://linux.die.net/man/1/unzip)
 * Entra nella cartella `01-git-init`, contiente lo scheletro di un progetto java
-* Apri [git bash](https://gitforwindows.org/) o il tuo terminale preferito :
-  computer: [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.)
+* Apri [git bash](https://gitforwindows.org/) o il tuo terminale preferito :computer: [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.) 
 * Digita `git init`
 * Hai inizializzato il tuo primo repository! :partying_face:
 
-Digita `ls -a` o apri esplora risorse, noterai che c'è una :new: nuova cartella `.git`    
+Digita `ls -a` o apri esplora risorse, noterai che c'è una nuova cartella :new: `.git`    
 ![git init](images/git-init.png)   
 Questa conterrà tutte le informazioni necessarie per versionare il nostro repository.
 
@@ -117,8 +120,7 @@ Questo perchè stiamo aggiungendo un file che non era presente nel repository.
 
 ### Staged
 
-Sappiamo che il file è in stato _Staged_ perchè si trova nel primo punto: **Changes to be committed**. :
-heavy_check_mark:
+Sappiamo che il file è in stato _Staged_ perchè si trova nel primo punto: **Changes to be committed**. :heavy_check_mark:
 
 Viceversa, il file `README.MD` è in stato _Modified_ ma non in _Staged_, infatti si trova nel secondo punto:
 **Changes not staged for commit**. :x:
@@ -179,8 +181,9 @@ Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commit_.
     * Aggiungi un commit
 2. Aggiungi un altro file: `cellulare.txt`
     * Scrivi nel file la marca del tuo cellulare
-    * Aggiungi un commit
-3. Ricorda di verificare lo stato del tuo repository!
+    * Aggiungi un commit 
+
+**Ricorda di verificare lo stato del tuo repository dopo ogni passaggio!**
 
 Una volta completato, puoi verificare [la soluzione qui.](#soluzione-esercizio-1)
 
@@ -213,6 +216,7 @@ Vediamo ora come eliminare un file solamente da git, senza cancellarlo dal nostr
   ![git-rm-cached](images/git-rm-cached.png)
 
 Nuovamente, troviamo il nostro file in due posizioni:
+
 * _Changes to be committed_: Qui il file verrà eliminato da git, infatti git ci dice che è **deleted**.
 * **Untracked files**: Come abbiamo visto con [git status](#untracked), i file untracked non verranno versionati da git.
 
@@ -231,6 +235,7 @@ Salviamo la modifica con un commit: `git commit -m "rimosso file nuovo da git"`
 * Verifichiamo lo stato: `git status`
 
 ![git-mv.png](images/git-mv.png)
+
 * Ora controlliamo il filesystem
 
 ![git-mv-fs.png](images/git-mv-fs.png)    
@@ -239,15 +244,67 @@ Il file è stato correttamente rinominato.
 ### Spostare un file
 
 Questo comando ci permette inoltre di spostare un file da una cartella ad un altra.
+
 * Spostiamo il file rinominato dentro **src**: `git mv rinominato.txt src`
 * Git riconosce che il file è stato spostato nella cartella **src**
-![git-mv-move-file.png](images/git-mv-move-file.png)
+  ![git-mv-move-file.png](images/git-mv-move-file.png)
 * Controlliamo il filesystem con `ls` e `ls src`
-![git-mv-move-file-fs.png](images/git-mv-move-file-fs.png)
+  ![git-mv-move-file-fs.png](images/git-mv-move-file-fs.png)
 
 Il file non è più presente nella cartella principale del nostro progetto, è stato spostato correttamente dentro `src`.
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#08-git-reset)
+
+## 08 git reset
+
+Rimuoviamo un file aggiunto in area di staging:
+
+* Controlliamo lo stato del repository `git status`
+
+![git-mv-move-file-fs.png](images/git-mv-move-file-fs.png)
+* Abbiamo il file `src/rinominato` disponibile
+* Rimuoviamo il file dalla _staging area_: `git reset HEAD src/rinominato`
+  * `HEAD` indica l'ultimo commit del nostro repository locale.
+* Andiamo a verificare: `git status`
+
+Il file è stato rimosso corretamente e lo ritroviamo sotto la voce `Untracked files`.
+![git-reset-head.png](images/git-reset-head.png)
+
+Se volessimo togliere i file dall'area di stage e annullare le modifiche fatte potremmo usare il flag --hard.
+
+* Aggiungiamo nuovamente i file: `git add nuovo.txt src/rinominato.txt`
+* Aggiungiamo un commit `git commit -m "aggiunto nuovo.txt e rinominato.txt"`
+* Controlliamo il repository: `git status`
+![git-reset-hard-status.png](images/git-reset-hard-status.png)
+* Modifichiamo ora i file :pencil: `nuovo.txt` e `rinominato.txt` e salviamoli :floppy_disk:
+* Eseguiamo ora il comando :computer: `git reset --hard HEAD`
+  * In questo caso non indichiamo il file perchè andiamo ad annullare le modifiche di tutto il repository
+* `git status`
+
+![git-reset-hard-status.png](images/git-reset-hard-status.png)
+
+Siamo nella stessa situazione in cui eravamo post commit.    
+Questo perchè tutti i file del repository sono stati rimossi dall'area di stage e le loro modifiche sono state annullate.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#09-git-checkout)
+
+## 09 git checkout
+
+Tramite git reset abbiamo annullato le modifiche per tutto il repository, annulliamo ora le modifiche fatte ad un solo file.
+
+* Apriamo il file :pencil: `nuovo.txt` e salviamolo :floppy_disk:
+* Facciamo lo stesso per `src/rinominato.txt` e salviamolo :floppy_disk:
+* :computer: `git status`
+
+![git-checkout-pre-command](images/git-checkout-pre-command.png)
+* Annulliamo le modifiche solo di `nuovo.txt`: `git checkout -- nuovo.txt`
+* :computer: `git status`
+
+![git-checkout-file.png](images/git-checkout-file.png)
+
+Le modifiche fatte al file `src/rinominato.txt` sono rimaste, mentre il file `nuovo.txt` è tornato alla versione precedente.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#10-git-restore)
 
 ## Soluzioni
 
