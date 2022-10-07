@@ -1,3 +1,5 @@
+# Formazione Git
+
 <!-- TOC -->
 * [Formazione Git](#formazione-git)
   * [Corso git](#corso-git)
@@ -8,8 +10,6 @@
     * [Documentazione ufficiale git](#documentazione-ufficiale-git)
     * [Lista di comandi git](#lista-di-comandi-git)
 <!-- TOC -->
-
-# Formazione Git
 
 ## Corso git
 

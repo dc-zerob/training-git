@@ -1,5 +1,10 @@
 # Git Course
 
+<!-- TOC -->
+* [Git Course](#git-course)
+  * [01 git init](#01-git-init)
+<!-- TOC -->
+
 ## 01 git init
 
 * [Scarica il progetto qui](01-git-init/01-git-init.zip)
