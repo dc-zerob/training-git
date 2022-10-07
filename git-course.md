@@ -3,27 +3,28 @@
 ## Indice
 
 <!-- TOC -->
-
 * [Corso git](#corso-git)
-    * [Indice](#indice)
-    * [01 git init](#01-git-init)
-    * [02 git clone](#02-git-clone)
-    * [03 git status](#03-git-status)
-        * [Stati possibili](#stati-possibili)
-            * [Unmodified](#unmodified)
-            * [Modified](#modified)
-            * [Untracked](#untracked)
-    * [04 git add](#04-git-add)
-        * [Staged](#staged)
-    * [05 git commit](#05-git-commit)
-    * [Esercizio 1](#esercizio-1)
-        * [Consegna](#consegna)
-    * [06 git rm](#06-git-rm)
-        * [Eliminazione file](#eliminazione-file)
-        * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
-    * [Soluzioni](#soluzioni)
-        * [Soluzione Esercizio 1](#soluzione-esercizio-1)
-
+  * [Indice](#indice)
+  * [01 git init](#01-git-init)
+  * [02 git clone](#02-git-clone)
+  * [03 git status](#03-git-status)
+    * [Stati possibili](#stati-possibili)
+      * [Unmodified](#unmodified)
+      * [Modified](#modified)
+      * [Untracked](#untracked)
+  * [04 git add](#04-git-add)
+    * [Staged](#staged)
+  * [05 git commit](#05-git-commit)
+  * [Esercizio 1](#esercizio-1)
+    * [Consegna](#consegna)
+  * [06 git rm](#06-git-rm)
+    * [Eliminazione file](#eliminazione-file)
+    * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
+  * [07 git mv](#07-git-mv)
+    * [Rinominare un file](#rinominare-un-file)
+    * [Spostiamo un file](#spostiamo-un-file)
+  * [Soluzioni](#soluzioni)
+    * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 <!-- TOC -->
 
 ## 01 git init
@@ -47,6 +48,8 @@ Questa conterrà tutte le informazioni necessarie per versionare il nostro repos
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#02-git-clone)
 
 ## 02 git clone
+
+Copiamo un repository esistente nel nostro pc, tramite git:
 
 * Andiamo ad aprire [questo repository GitHub](https://github.com/dc-zerob/01-git-init) :globe_with_meridians:
 * Apriamo esplora risorse in una nuova cartella
@@ -209,15 +212,42 @@ Vediamo ora come eliminare un file solamente da git, senza cancellarlo dal nostr
 * Rimuoviamo ora il file solo da git `git rm --cached nuovo.txt`
   ![git-rm-cached](images/git-rm-cached.png)
 
-Nuovamente abbiamo il file in due posizioni:
-
+Nuovamente, troviamo il nostro file in due posizioni:
 * _Changes to be committed_: Qui il file verrà eliminato da git, infatti git ci dice che è **deleted**.
 * **Untracked files**: Come abbiamo visto con [git status](#untracked), i file untracked non verranno versionati da git.
 
 Dunque il nostro file non verrà più preso in considerazione da git, ma non verrà eliminato dal nostro pc.    
 Salviamo la modifica con un commit: `git commit -m "rimosso file nuovo da git"`
 
-[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#06-git-mv)
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#07-git-mv)
+
+## 07 git mv
+
+### Rinominare un file
+
+* Creiamo un nuovo file: `touch da_rinominare.txt`
+* Aggiungiamolo a git: `git add da_rinominare.txt`
+* Rinominiamo il file: `git mv da_rinominare.txt file_rinominato.txt`
+* Verifichiamo lo stato: `git status`
+
+![git-mv.png](images/git-mv.png)
+* Ora controlliamo il filesystem
+
+![git-mv-fs.png](images/git-mv-fs.png)    
+Il file è stato correttamente rinominato.
+
+### Spostare un file
+
+Questo comando ci permette inoltre di spostare un file da una cartella ad un altra.
+* Spostiamo il file rinominato dentro **src**: `git mv rinominato.txt src`
+* Git riconosce che il file è stato spostato nella cartella **src**
+![git-mv-move-file.png](images/git-mv-move-file.png)
+* Controlliamo il filesystem con `ls` e `ls src`
+![git-mv-move-file-fs.png](images/git-mv-move-file-fs.png)
+
+Il file non è più presente nella cartella principale del nostro progetto, è stato spostato correttamente dentro `src`.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#08-git-reset)
 
 ## Soluzioni
 
