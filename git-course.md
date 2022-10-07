@@ -25,8 +25,7 @@
   con [windows esplora risorse](https://support.microsoft.com/it-it/windows/comprimere-e-decomprimere-file-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)
   , [7z](https://www.7-zip.org/download.html) o [tramite terminale (unzip)](https://linux.die.net/man/1/unzip)
 * Entra nella cartella `01-git-init`, contiente lo scheletro di un progetto java
-* Apri [git bash](https://gitforwindows.org/) o il tuo terminale preferito :
-  computer: [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.)
+* Apri [git bash](https://gitforwindows.org/) o il tuo terminale preferito :computer: [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.)
 * Digita `git init`
 * Hai inizializzato il tuo primo repository! :partying_face:
 
@@ -92,7 +91,7 @@ Al momento siamo nello stato `Unmodified`, non abbiamo modificato e non abbiamo 
 
 ## 04 git add
 
-Andiamo ad aggiungere il file `test.txt` in stato _Untracked_ al repository git.
+Analizziamo l'ultimo stato, ovvero *Staged*, aggiungendo il file `test.txt` in stato _Untracked_ al repository git.
 
 * Digitiamo `git add test.txt`
 * Controlliamo con `git status`
@@ -101,6 +100,12 @@ Andiamo ad aggiungere il file `test.txt` in stato _Untracked_ al repository git.
 Leggendo la console, git ci comunica che il file è pronto per essere committato (nella sezione _Changes to be
 committed_) e viene dichiarato da git come nuovo (_new file_).    
 Questo perchè stiamo aggiungendo un file che non era presente nel repository.
+
+### Staged
+Sappiamo che il file è in stato _Staged_ perchè si trova nel primo punto: **Changes to be committed**. :heavy_check_mark:    
+
+Viceversa, il file `README.MD` è in stato _Modified_ ma non in _Staged_, infatti si trova nel secondo punto: 
+**Changes not staged for commit**. :x:    
 
 Proviamo a modificare il file:
 
@@ -128,8 +133,19 @@ Ora abbiamo un solo file sotto la voce _Changes to be committed_, che include le
 Siamo pronti per versionare le nostre modifiche e dunque fare il nostro primo commit.
 
 * Digitiamo  :computer: `git commit -m "aggiunto file di test"`
-    * Tramite il flag `-m` andiamo a scrivere il messaggio per il nostro commit
-* Verifichiamo con git status
-  ![git-commit.png](images/git-commit.png)
+    * Tramite il flag `-m` definiamo il messaggio per il nostro commit
+* Verifichiamo con `git status`
+![git-commit.png](images/git-commit.png)
 
-Ora siamo
+Ora abbiamo salvato e dunque **committato** le nostre modifiche.   
+Controllando la console, git ci comunica che abbiamo "1 commit in più" (_ahead of ... by 1 commit_), dunque il commit è stato creato correttamente.
+
+Andiamo a salvare anche le modifiche al file `README.MD`
+* Aggiungiamo il file `git add README.MD`
+* Committiamo con `git commit -m "aggiornato readme"`
+* Controlliamo: `git status`
+
+![img.png](images/git-commit-readme.png)    
+
+Abbiamo completato il nostro secondo commit :white_check_mark:.    
+Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commit_.
