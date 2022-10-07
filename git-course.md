@@ -14,18 +14,25 @@
             * [Modified](#modified)
             * [Untracked](#untracked)
     * [04 git add](#04-git-add)
+        * [Staged](#staged)
     * [05 git commit](#05-git-commit)
+    * [Esercizio 1](#esercizio-1)
+        * [Consegna](#consegna)
+    * [Soluzione](#soluzione)
 
 <!-- TOC -->
 
 ## 01 git init
+
+Creiamo il nostro primo repository git:
 
 * [Scarica il progetto da qui](01-git-init/01-git-init.zip)
 * Scompatta il progetto
   con [windows esplora risorse](https://support.microsoft.com/it-it/windows/comprimere-e-decomprimere-file-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc)
   , [7z](https://www.7-zip.org/download.html) o [tramite terminale (unzip)](https://linux.die.net/man/1/unzip)
 * Entra nella cartella `01-git-init`, contiente lo scheletro di un progetto java
-* Apri [git bash](https://gitforwindows.org/) o il tuo terminale preferito :computer: [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.)
+* Apri [git bash](https://gitforwindows.org/) o il tuo terminale preferito :
+  computer: [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.)
 * Digita `git init`
 * Hai inizializzato il tuo primo repository! :partying_face:
 
@@ -102,10 +109,12 @@ committed_) e viene dichiarato da git come nuovo (_new file_).
 Questo perchè stiamo aggiungendo un file che non era presente nel repository.
 
 ### Staged
-Sappiamo che il file è in stato _Staged_ perchè si trova nel primo punto: **Changes to be committed**. :heavy_check_mark:    
 
-Viceversa, il file `README.MD` è in stato _Modified_ ma non in _Staged_, infatti si trova nel secondo punto: 
-**Changes not staged for commit**. :x:    
+Sappiamo che il file è in stato _Staged_ perchè si trova nel primo punto: **Changes to be committed**. :
+heavy_check_mark:
+
+Viceversa, il file `README.MD` è in stato _Modified_ ma non in _Staged_, infatti si trova nel secondo punto:
+**Changes not staged for commit**. :x:
 
 Proviamo a modificare il file:
 
@@ -135,17 +144,55 @@ Siamo pronti per versionare le nostre modifiche e dunque fare il nostro primo co
 * Digitiamo  :computer: `git commit -m "aggiunto file di test"`
     * Tramite il flag `-m` definiamo il messaggio per il nostro commit
 * Verifichiamo con `git status`
-![git-commit.png](images/git-commit.png)
+  ![git-commit.png](images/git-commit.png)
 
 Ora abbiamo salvato e dunque **committato** le nostre modifiche.   
-Controllando la console, git ci comunica che abbiamo "1 commit in più" (_ahead of ... by 1 commit_), dunque il commit è stato creato correttamente.
+Controllando la console, git ci comunica che abbiamo "1 commit in più" (_ahead of ... by 1 commit_), dunque il commit è
+stato creato correttamente.
 
 Andiamo a salvare anche le modifiche al file `README.MD`
+
 * Aggiungiamo il file `git add README.MD`
 * Committiamo con `git commit -m "aggiornato readme"`
 * Controlliamo: `git status`
 
-![img.png](images/git-commit-readme.png)    
+![img.png](images/git-commit-readme.png)
 
 Abbiamo completato il nostro secondo commit :white_check_mark:.    
 Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commit_.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#esercizio-1)
+
+## Esercizio 1
+
+### Consegna
+
+1. Aggiungi 1 file con il tuo nome, ad esempio `marco.txt`
+    * Scrivi nel file il tuo nome e salvalo
+    * Aggiungi un commit
+2. Aggiungi un altro file: `cellulare.txt`
+    * Scrivi nel file la marca del tuo cellulare
+    * Aggiungi un commit
+3. Ricorda di verificare lo stato del tuo repository!
+
+Una volta completato, puoi verificare [la soluzione qui](#soluzione-esercizio-1)
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#esercizio-1)
+
+## 06 git rm
+
+Abbiamo aggiunto un file che doveva essere eliminato, possiamo rimuoverlo con `git rm`.
+
+## Soluzioni
+
+### Soluzione Esercizio 1
+
+* Creiamo il file `touch marco.txt`
+  * Scriviamo nel file `marco` e salviamolo
+  * Aggiungiamo il file al repository `git add marco.txt`
+  * Commit: `git commit -m "aggiunto marco"`
+* Creiamo il file cellulare `touch cellulare.txt`
+  * Scriviamo all'interno `samsung`
+  * Aggiungiamo il file al repository `git add cellulare.txt`
+  * Creiamo un commit: `git commit -m "aggiunto il file cellulare"`
+
