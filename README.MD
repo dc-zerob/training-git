@@ -1,18 +1,38 @@
-# Git Training 
+<!-- TOC -->
+* [Formazione Git](#formazione-git)
+  * [Corso git](#corso-git)
+  * [Risorse](#risorse)
+    * [Guida per Git di GitHub](#guida-per-git-di-github)
+    * [Corso Github](#corso-github)
+    * [Video guide di Github](#video-guide-di-github)
+    * [Documentazione ufficiale git](#documentazione-ufficiale-git)
+    * [Lista di comandi git](#lista-di-comandi-git)
+<!-- TOC -->
 
-## Resources:
+# Formazione Git
 
-### Git and GitHub learning resources
+## Corso git
+
+[Clicca qui per iniziare il corso git](git-course.md)
+
+## Risorse
+
+### Guida per Git di GitHub
+
 https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources
 
-### Github on-demand training courses 
+### Corso Github
+
 https://skills.github.com/
 
-### Github training videos
+### Video guide di Github
+
 https://www.youtube.com/githubguides
 
-### Git official doc
+### Documentazione ufficiale git
+
 https://git-scm.com/
 
-### Git commands list
+### Lista di comandi git
+
 https://git-scm.com/docs
