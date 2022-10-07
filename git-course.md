@@ -16,7 +16,8 @@
 * Digita `git init`
 * Hai inizializzato il tuo primo repository! :partying_face:
 
-Digita `ls` o apri esplora risorse, noterai che c'è una :new: nuova cartella `.git`   
+Digita `ls -a` o apri esplora risorse, noterai che c'è una :new: nuova cartella `.git`
+![git init](images/git-init.png)   
 Questa conterrà tutte le informazioni necessarie per versionare il nostro repository.
 
 
@@ -38,7 +39,7 @@ Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto c
 * Apriamo il progetto precedento scaricato
 * Apriamo git bash :computer:
 * Digitiamo `git status`
-![imgages/img.png](images/git-status.png)
+![git status](images/git-status.png)
   * Ci da subito 3 informazioni   
   :one: Il branch in cui siamo `master`    
   :two: Il nostro branch è allineato con `origin/master`    
