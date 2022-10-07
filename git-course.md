@@ -8,6 +8,10 @@
   * [01 git init](#01-git-init)
   * [02 git clone](#02-git-clone)
   * [03 git status](#03-git-status)
+    * [Stati possibili:](#stati-possibili-)
+      * [Unmodified](#unmodified)
+      * [Modified](#modified)
+      * [Untracked](#untracked)
 <!-- TOC -->
 
 ## 01 git init
@@ -42,7 +46,7 @@ Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto c
 
 ## 03 git status
 
-* Apriamo il progetto precedentemente scaricato
+* Apriamo il progetto [precedentemente scaricato](#02-git-clone)
 * Apriamo git bash :computer:
 * Digitiamo `git status`
 ![git status](images/git-status.png)
@@ -51,14 +55,24 @@ Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto c
   :two: Il nostro branch è allineato con `origin/master`    
   :three: Non abbiamo nulla da aggiungere `nothing to commit, working tree clean`    
 
-Stati possibili:
+### Stati possibili:
 ![git-status-lifecycle.png](images/git-status-lifecycle.png)    
 
+
+#### Unmodified
 Al momento siamo nello stato `Unmodified`, non abbiamo modificato e non abbiamo aggiunto file.
 
+#### Modified
 * Apriamo il file :pencil: `README.MD` e modifichiamo il titolo 
 * Salviamo il file :floppy_disk:
 * Digitiamo `git status`, ora siamo nello stato `Modified`
 ![git-status-modified.png](images/git-status-modified.png)    
+
+#### Untracked
+* Aggiungiamo un nuovo file digitando `touch test.txt` nel terminale
+* Verifichiamo con `git status`
+  ![git-status-untracked.png](images/git-status-untracked.png)    
+Come notiamo dall'immagine, abbiamo il file precedente `README.MD` in stato _Modified_ e il nostro nuovo file `test.txt` in stato _Untracked_.     
+Dunque, git ci sta dicendo che il file `test.txt` non è versionato nel repository.
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#03-git-status)
