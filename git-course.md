@@ -18,7 +18,11 @@
     * [05 git commit](#05-git-commit)
     * [Esercizio 1](#esercizio-1)
         * [Consegna](#consegna)
-    * [Soluzione](#soluzione)
+    * [06 git rm](#06-git-rm)
+        * [Eliminazione file](#eliminazione-file)
+        * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
+    * [Soluzioni](#soluzioni)
+        * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 
 <!-- TOC -->
 
@@ -167,7 +171,7 @@ Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commit_.
 
 ### Consegna
 
-1. Aggiungi 1 file con il tuo nome, ad esempio `marco.txt`
+1. Aggiungi un nuovo file `nome.txt`
     * Scrivi nel file il tuo nome e salvalo
     * Aggiungi un commit
 2. Aggiungi un altro file: `cellulare.txt`
@@ -175,24 +179,58 @@ Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commit_.
     * Aggiungi un commit
 3. Ricorda di verificare lo stato del tuo repository!
 
-Una volta completato, puoi verificare [la soluzione qui](#soluzione-esercizio-1)
+Una volta completato, puoi verificare [la soluzione qui.](#soluzione-esercizio-1)
 
-[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#esercizio-1)
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#06-git-rm)
 
 ## 06 git rm
 
-Abbiamo aggiunto un file che doveva essere eliminato, possiamo rimuoverlo con `git rm`.
+### Eliminazione file
+
+Abbiamo aggiunto un file che doveva essere eliminato, rimuoviamolo con `git rm`.
+
+* Rimuoviamo il file `README.MD`
+* Eseguiamo il comando `git rm README.MD`
+  ![git-rm](images/git-rm.png)
+* Verifichiamo il nostro repository con `ls -a`
+
+  ![git-rm-status.png](images/git-rm-status.png)
+    * Il file è stato rimosso dal nostro progetto e da git.
+    * Possiamo committarlo (in quanto il file si trova in _Changes to be committed_)
+* Versioniamo le modifiche: `git commit -m "rimosso readme"`
+
+### Eliminazione file solo da git
+
+Vediamo ora come eliminare un file solamente da git, senza cancellarlo dal nostro progetto.
+
+* Aggiungiamo un nuovo file `touch nuovo.txt`
+* Spostiamolo in `Staged` con: `git add nuovo.txt`
+* Creiamo un commit `git commit -m "nuovo file"`
+* Rimuoviamo ora il file solo da git `git rm --cached nuovo.txt`
+  ![git-rm-cached](images/git-rm-cached.png)
+
+Nuovamente abbiamo il file in due posizioni:
+
+* _Changes to be committed_: Qui il file verrà eliminato da git, infatti git ci dice che è **deleted**.
+* **Untracked files**: Come abbiamo visto con [git status](#untracked), i file untracked non verranno versionati da git.
+
+Dunque il nostro file non verrà più preso in considerazione da git, ma non verrà eliminato dal nostro pc.    
+Salviamo la modifica con un commit: `git commit -m "rimosso file nuovo da git"`
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#06-git-mv)
 
 ## Soluzioni
 
 ### Soluzione Esercizio 1
 
-* Creiamo il file `touch marco.txt`
-  * Scriviamo nel file `marco` e salviamolo
-  * Aggiungiamo il file al repository `git add marco.txt`
-  * Commit: `git commit -m "aggiunto marco"`
+* Creiamo il file `touch nome.txt`
+    * Scriviamo nel file `marco` e salviamolo
+    * Aggiungiamo il file al repository `git add nome.txt`
+    * Commit: `git commit -m "aggiunto il file nome"`
 * Creiamo il file cellulare `touch cellulare.txt`
-  * Scriviamo all'interno `samsung`
-  * Aggiungiamo il file al repository `git add cellulare.txt`
-  * Creiamo un commit: `git commit -m "aggiunto il file cellulare"`
+    * Scriviamo all'interno `samsung`
+    * Aggiungiamo il file al repository `git add cellulare.txt`
+    * Creiamo il commit: `git commit -m "aggiunto il file cellulare"`
+
+[:arrow_up: indice](#indice) - [:arrow_up: Esercizio 1 :clipboard:](#esercizio-1)
 
