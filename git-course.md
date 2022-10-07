@@ -27,7 +27,7 @@ Questa conterrà tutte le informazioni necessarie per versionare il nostro repos
 
 ## 02 git clone
 
-* Andiamo ad aprire [questo repository github](https://github.com/ikatyang/emoji-cheat-sheet.git) :globe_with_meridians:
+* Andiamo ad aprire [questo repository GitHub](https://github.com/dc-zerob/01-git-init) :globe_with_meridians:
 * Apriamo esplora risorse in una nuova cartella
 * Apriamo git bash in questa cartella :computer:
 * Digitiamo `git clone https://github.com/ikatyang/emoji-cheat-sheet.git`
@@ -50,5 +50,15 @@ Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto c
   :one: Il branch in cui siamo `master`    
   :two: Il nostro branch è allineato con `origin/master`    
   :three: Non abbiamo nulla da aggiungere `nothing to commit, working tree clean`    
+
+Stati possibili:
+![git-status-lifecycle.png](images/git-status-lifecycle.png)    
+
+Al momento siamo nello stato `Unmodified`, non abbiamo modificato e non abbiamo aggiunto file.
+
+* Apriamo il file :pencil: `README.MD` e modifichiamo il titolo 
+* Salviamo il file :floppy_disk:
+* Digitiamo `git status`, ora siamo nello stato `Modified`
+![git-status-modified.png](images/git-status-modified.png)    
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#03-git-status)
