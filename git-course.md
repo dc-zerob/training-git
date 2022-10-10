@@ -59,15 +59,15 @@ Questa conterrà tutte le informazioni necessarie per versionare il nostro repos
 
 ## 02 git clone
 
-Copiamo un repository esistente nel nostro pc, tramite git:
+Copiamo un repository esistente tramite git:
 
-* Andiamo ad aprire [questo repository GitHub](https://github.com/dc-zerob/01-git-init) :globe_with_meridians:
+* Andiamo ad aprire [questo repository GitHub](https://github.com/zerob-it/01-git-init) :globe_with_meridians:
 * Apriamo esplora risorse in una nuova cartella
-* Apriamo git bash in questa cartella :computer:
-* Digitiamo `git clone https://github.com/ikatyang/emoji-cheat-sheet.git`
+* Apriamo git bash [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.)
+* Digitiamo `git clone https://github.com/zerob-it/01-git-init.git`
 * Ora abbiamo scaricato lo stesso progetto che abbiamo aperto poco fa sul browser
 
-Se entriamo nella cartella `emoji-cheat-sheet`, notiamo come prima cosa che c'è già una cartella `.git`.   
+Se entriamo nella cartella `01-git-init`, notiamo come prima cosa che c'è già una cartella `.git`.   
 Ciò significa che questo progetto è stato precedentemente inizializzato con `git init` e poi reso disponibile online.
 
 Dunque non ci sarà bisogno di dover inizializzare manualmente questo progetto come
@@ -465,6 +465,32 @@ E' l'unico commit in più (come segnalato dalla console) dato che non abbiamo ef
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#17-git-merge-e-conflitti)
 
 ## 17 git merge e conflitti
+
+Risolviamo un merge in conflitto, unendo il branch `feature/evolutiva` con `develop`:
+* Spostiamoci sul branch `develop`: `git checkout develop`
+* Mergiamo il branch: `git merge origin/feature/evolutiva`
+  * Poniamo `origin/` davanti al nome del branch perchè stiamo mergiando un branch remoto.
+
+![git-merge-conflicts.png](images/git-merge-conflicts.png)
+
+* Abbiamo un conflitto, risolviamolo aprendo il file
+
+![git-merge-conflicts-file.png](images/git-merge-conflicts-file.png)
+* La parte identificata da `<<<<<<< HEAD` fino a `=======` indica le modifiche che abbiamo attualmente nel branch.
+* La parte dal `=======` fino a `>>>>>>> origin/feature/evolutiva` indica le modifiche presenti nel branch `feature/evolutiva` che stiamo mergiando
+* Risolviamo il conflitto eliminando questi _marker_ e lasciando le modifiche che desideriamo:
+
+![git-merge-conflicts-resolved.png](images/git-merge-conflicts-resolved.png)
+
+* Salviamo il file :floppy_disk:
+* Aggiungiamolo all'aera di stage: `git add src/main/java/it/zerob/sample/Sample.java`
+* Completiamo il merge con un nuovo commit: `git commit -m "mergiato il branch feature/evolutiva"`
+
+![git-merge-conflicts-commit.png](images/git-merge-conflicts-commit.png)
+
+Il conflitto può essere risolto in molti altri modi, tramite i vari IDE, usando il [mergetool](https://git-scm.com/docs/git-mergetool) o altri strumenti grafici che aiutano visivamente nella risoluzione di conflitti.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#soluzioni)
 
 ## Soluzioni
 
