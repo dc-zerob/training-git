@@ -29,6 +29,7 @@
   * [11 git remote](#11-git-remote)
   * [12 git fetch](#12-git-fetch)
   * [13 git pull](#13-git-pull)
+  * [14 git push](#14-git-push)
   * [Soluzioni](#soluzioni)
     * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 <!-- TOC -->
@@ -384,13 +385,33 @@ Ci suggerisce di usare `git pull` che vediamo nella prossima sezione.
 
 ## 13 git pull
 
-Includiamo le modifiche scaricate da git-fetch nel nostro repository.
+Includiamo le modifiche scaricate da git-fetch nel nostro repository:
 * :computer: `git pull`
 * Verifichiamo con: `git status`
 
 ![git-pull](images/git-pull.png)
 
 L'output del comando `git pull` ci avvisa che il file `README.MD` è stato modificato e ora il nostro repository e allineato.
+
+Tipicamente possiamo usare direttamente `git pull` per scaricare informazioni dal repository remoto e nuovi commit, ["sotto al cofano"](https://git-scm.com/docs/git-pull) esegue `git fetch` e poi aggiorna il filesystem (`git merge`).
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#14-git-push)
+
+## 14 git push
+
+Rendiamo disponibili le nostre modifiche a tutti, effettuando una push.
+
+* Cloniamo un nuovo repository: `git clone https://github.com/zerob-it/01-git-init-push.git`
+* Apriamo il progetto nel browser [qui](https://github.com/zerob-it/01-git-init-push)
+* Apriamo il progetto con esplora risorse o con l'IDE
+* Aggiungiamo un file con il nostro nome nelle cartella `src/main/resources`, e scriviamo all'interno la data odierna.
+* Spostiamo il file nella staging area, es: `git add nome.txt`
+* Commit: `git commit -m 'aggiunto il file nome`
+* Ora rendiamo disponibile il file a tutti: `git push`
+* Verifichiamo nel browser il nostro file, entrando nella cartella `src/main/resources`
+
+![git-push-browser.png](images/git-push-browser.png)
+
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#14-git-push)
 
