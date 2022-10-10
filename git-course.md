@@ -31,6 +31,9 @@
   * [13 git pull](#13-git-pull)
   * [14 git push](#14-git-push)
   * [15 git branch](#15-git-branch)
+    * [Cambiare branch](#cambiare-branch)
+  * [16 git merge](#16-git-merge)
+  * [17 git merge e conflitti](#17-git-merge-e-conflitti)
   * [Soluzioni](#soluzioni)
     * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 <!-- TOC -->
@@ -443,6 +446,25 @@ Come evidenziato dalla console, il branch attuale è il branch: `nuovo`.
 _Si possono unire queste due operazioni in un comando unico tramite [git-checkout](https://git-scm.com/docs/git-checkout): `git checkout -b nomebranch`_
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#16-git-merge)
+
+## 16 git merge
+
+Uniamo due branch:
+* Aggiungiamo un file merge.txt
+* Scriviamoci all'interno 'merge' e salviamolo :floppy_disk:
+* Aggiungiamo il file all'area di stage: `git add merge.txt`
+* Commit: `git commit -m "aggiunto merge.txt"`
+* Spostiamoci su master: `git checkout master`
+* Uniamo il branch in `nuovo` con `master`: `git merge nuovo`
+
+![git-branch](images/git-merge-nuovo.png)
+
+Il commit fatto sul branch `nuovo`, è stato aggiunto al branch `master`.    
+E' l'unico commit in più (come segnalato dalla console) dato che non abbiamo effettuato altre modifiche.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#17-git-merge-e-conflitti)
+
+## 17 git merge e conflitti
 
 ## Soluzioni
 
