@@ -269,7 +269,7 @@ Rimuoviamo un file aggiunto in area di staging:
 Il file è stato rimosso corretamente e lo ritroviamo sotto la voce `Untracked files`.
 ![git-reset-head.png](images/git-reset-head.png)
 
-Se volessimo togliere i file dall'area di stage e annullare le modifiche fatte potremmo usare il flag --hard.
+Se volessimo togliere i file dall'area di stage e annullare le modifiche fatte potremmo usare il flag `--hard`.
 
 * Aggiungiamo nuovamente i file: `git add nuovo.txt src/rinominato.txt`
 * Aggiungiamo un commit `git commit -m "aggiunto nuovo.txt e rinominato.txt"`
@@ -301,12 +301,34 @@ Tramite git reset abbiamo annullato le modifiche per tutto il repository, annull
 
 ![git-checkout-file.png](images/git-checkout-file.png)
 
-Le modifiche fatte al file `src/rinominato.txt` sono rimaste, mentre il file `nuovo.txt` è tornato alla versione precedente.
+Le modifiche fatte al file `src/rinominato.txt` sono rimaste, mentre il file `nuovo.txt` non contiene più le nostre modifiche.
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#10-git-restore)
 
+## 10 git restore
 
+I comandi precedentemente spiegati sono risultati complessi, e poco intuitivi per i nuovi (a volte anche per i veterani) utenti di git, [visto che possono eseguire moltissime operazioni oltre a quelle spiegate fin'ora](https://stackoverflow.com/a/58003889/5533075). 
+Se volete saperne di più, vi consiglio di approfondirli sulla guida ufficiale:
+* [git reset](https://git-scm.com/docs/git-reset)
+* [git checkout](https://git-scm.com/docs/git-checkout)
 
+Per semplificare i due comandi e restringere le operazioni che possono svolgere, sono stati introdotti vari comandi tra cui [git restore](https://git-scm.com/docs/git-restore). Vediamo come rimuovere il file dall'area di stage con questo comando:
+
+* Aggiungiamo il file `src/rinominato.txt` nella staging area: `git add src/rinominato.txt`
+* Ora rimuoviamolo tramite il nuovo comando restore: `git restore --staged file`
+* :computer: `git status`
+
+![git-checkout-file.png](images/git-checkout-file.png)
+
+Ripristiniamo il file dopo averlo modificato:
+* Apriamo il file :pencil: `src/rinominato.txt` e salviamolo :floppy_disk:
+* Ripristiniamo il file: `git restore src/rinominato.txt`
+
+![git-restore-file.png](images/git-restore-file.png)
+
+Abbiamo visto come ottenere gli stessi risultati che abbiamo visto prima con [git reset](#08-git-reset) e con [git checkout](#09-git-checkout) usando un solo comando e semplificando le operazioni.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#11-git-remote)
 
 ## Soluzioni
 
