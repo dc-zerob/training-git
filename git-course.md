@@ -3,32 +3,31 @@
 ## Indice
 
 <!-- TOC -->
-
 * [Corso git](#corso-git)
-    * [Indice](#indice)
-    * [01 git init](#01-git-init)
-    * [02 git clone](#02-git-clone)
-    * [03 git status](#03-git-status)
-        * [Stati possibili](#stati-possibili)
-            * [Unmodified](#unmodified)
-            * [Modified](#modified)
-            * [Untracked](#untracked)
-    * [04 git add](#04-git-add)
-        * [Staged](#staged)
-    * [05 git commit](#05-git-commit)
-    * [Esercizio 1](#esercizio-1)
-        * [Consegna](#consegna)
-    * [06 git rm](#06-git-rm)
-        * [Eliminazione file](#eliminazione-file)
-        * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
-    * [07 git mv](#07-git-mv)
-        * [Rinominare un file](#rinominare-un-file)
-        * [Spostare un file](#spostare-un-file)
-    * [08 git reset](#08-git-reset)
-    * [09 git checkout](#09-git-checkout)
-    * [Soluzioni](#soluzioni)
-        * [Soluzione Esercizio 1](#soluzione-esercizio-1)
-
+  * [Indice](#indice)
+  * [01 git init](#01-git-init)
+  * [02 git clone](#02-git-clone)
+  * [03 git status](#03-git-status)
+    * [Stati possibili](#stati-possibili)
+      * [Unmodified](#unmodified)
+      * [Modified](#modified)
+      * [Untracked](#untracked)
+  * [04 git add](#04-git-add)
+    * [Staged](#staged)
+  * [05 git commit](#05-git-commit)
+  * [Esercizio 1](#esercizio-1)
+    * [Consegna](#consegna)
+  * [06 git rm](#06-git-rm)
+    * [Eliminazione file](#eliminazione-file)
+    * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
+  * [07 git mv](#07-git-mv)
+    * [Rinominare un file](#rinominare-un-file)
+    * [Spostare un file](#spostare-un-file)
+  * [08 git reset](#08-git-reset)
+  * [09 git checkout](#09-git-checkout)
+  * [10 git restore](#10-git-restore)
+  * [Soluzioni](#soluzioni)
+    * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 <!-- TOC -->
 
 ## 01 git init
@@ -97,7 +96,7 @@ Al momento siamo nello stato `Unmodified`, non abbiamo modificato e non abbiamo 
 
 #### Untracked
 
-* Aggiungiamo un nuovo file digitando `touch test.txt` nel terminale
+* Aggiungiamo un nuovo file `test.txt`
 * Verifichiamo con `git status`
   ![git-status-untracked.png](images/git-status-untracked.png)    
   Come notiamo dall'immagine, abbiamo il file precedente `README.MD` in stato _Modified_ e il nostro nuovo
@@ -209,7 +208,7 @@ Abbiamo aggiunto un file che doveva essere eliminato, rimuoviamolo con `git rm`.
 
 Vediamo ora come eliminare un file solamente da git, senza cancellarlo dal nostro progetto.
 
-* Aggiungiamo un nuovo file `touch nuovo.txt`
+* Aggiungiamo un nuovo file `nuovo.txt`
 * Spostiamolo in `Staged` con: `git add nuovo.txt`
 * Creiamo un commit `git commit -m "nuovo file"`
 * Rimuoviamo ora il file solo da git `git rm --cached nuovo.txt`
@@ -229,7 +228,7 @@ Salviamo la modifica con un commit: `git commit -m "rimosso file nuovo da git"`
 
 ### Rinominare un file
 
-* Creiamo un nuovo file: `touch da_rinominare.txt`
+* Creiamo un nuovo file: `da_rinominare.txt`
 * Aggiungiamolo a git: `git add da_rinominare.txt`
 * Rinominiamo il file: `git mv da_rinominare.txt file_rinominato.txt`
 * Verifichiamo lo stato: `git status`
@@ -306,15 +305,18 @@ Le modifiche fatte al file `src/rinominato.txt` sono rimaste, mentre il file `nu
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#10-git-restore)
 
+
+
+
 ## Soluzioni
 
 ### Soluzione Esercizio 1
 
-* Creiamo il file `touch nome.txt`
+* Creiamo il file `nome.txt`
     * Scriviamo nel file `marco` e salviamolo
     * Aggiungiamo il file al repository `git add nome.txt`
     * Commit: `git commit -m "aggiunto il file nome"`
-* Creiamo il file cellulare `touch cellulare.txt`
+* Creiamo il file cellulare `cellulare.txt`
     * Scriviamo all'interno `samsung`
     * Aggiungiamo il file al repository `git add cellulare.txt`
     * Creiamo il commit: `git commit -m "aggiunto il file cellulare"`
