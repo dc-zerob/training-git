@@ -30,6 +30,7 @@
   * [12 git fetch](#12-git-fetch)
   * [13 git pull](#13-git-pull)
   * [14 git push](#14-git-push)
+  * [15 git branch](#15-git-branch)
   * [Soluzioni](#soluzioni)
     * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 <!-- TOC -->
@@ -413,7 +414,35 @@ Rendiamo disponibili le nostre modifiche a tutti, effettuando una push.
 ![git-push-browser.png](images/git-push-browser.png)
 
 
-[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#14-git-push)
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#15-git-branch)
+
+## 15 git branch
+
+Tramite il comando [git-branch](https://git-scm.com/docs/git-branch) possiamo visualizzare il branch corrente o crearne di nuovi.
+* Guardiamo il branch in cui siamo: `git branch`
+
+![git-branch-check-branch.png](images/git-branch-check-branch.png)
+* Creiamo un nuovo branch: `git branch nuovo`
+* Verifichiamo il branch creato: `git branch`
+
+![git-branch-new-branch.png](images/git-branch-new-branch.png)
+
+Vediamo ora due branch, il primo **in verde** con un **asterisco** a sinistra, rappresenta il branch in cui siamo.
+Il secondo in bianco, rappresenta il branch appena creato.
+
+### Cambiare branch
+
+Per spostarci di branch possiamo usare il comando di [checkout](https://git-scm.com/docs/git-checkout).
+* Cambiamo branch: `git checkout nuovo`
+* Controlliamo il branch: `git branch`
+
+![git-branch-checkout.png](images/git-branch-checkout.png)
+
+Come evidenziato dalla console, il branch attuale è il branch: `nuovo`.
+
+_Si possono unire queste due operazioni in un comando unico tramite [git-checkout](https://git-scm.com/docs/git-checkout): `git checkout -b nomebranch`_
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#16-git-merge)
 
 ## Soluzioni
 
