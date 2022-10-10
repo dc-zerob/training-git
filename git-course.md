@@ -27,6 +27,8 @@
   * [09 git checkout](#09-git-checkout)
   * [10 git restore](#10-git-restore)
   * [11 git remote](#11-git-remote)
+  * [12 git fetch](#12-git-fetch)
+  * [13 git pull](#13-git-pull)
   * [Soluzioni](#soluzioni)
     * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 <!-- TOC -->
@@ -359,7 +361,38 @@ Possiamo aggiungere o rimuovere i nostri remote tramite appositi comandi:
 
 ![git-remote-v](images/git-remote-v.png)
 
-[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#11-git-remote)
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#12-git-fetch)
+
+## 12 git fetch
+
+Il comando `git fetch` scarica le informazioni del repository remoto definito nel nostro `remote` senza applicarle.
+E' ciò che permette a [git status](#03-git-status) di identificare i commit nuovi o mancanti rispetto al `remote` definito.
+
+Per questa casistica andiamo a simulare che qualcuno abbia aggiunto un commit al repository spostandoci nella storia di git:
+
+* Cloniamo il progetto: `git clone https://github.com/zerob-it/01-git-init-fetch.git`
+* Eseguiamo questo script: `git reset --hard HEAD^1`
+* Lanciamo il comando di fetch `git fetch`
+* Ora controlliamo con: `git status`
+
+![git-fetch-status.png](images/git-fetch-status.png)
+
+Git ha scaricato le informazioni dal repository e nota che ci manca 1 commit, le modifiche di quel commit non sono ancora presenti sul nostro filesystem.    
+Ci suggerisce di usare `git pull` che vediamo nella prossima sezione.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#13-git-pull)
+
+## 13 git pull
+
+Includiamo le modifiche scaricate da git-fetch nel nostro repository.
+* :computer: `git pull`
+* Verifichiamo con: `git status`
+
+![git-pull](images/git-pull.png)
+
+L'output del comando `git pull` ci avvisa che il file `README.MD` è stato modificato e ora il nostro repository e allineato.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#14-git-push)
 
 ## Soluzioni
 
