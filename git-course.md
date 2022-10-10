@@ -26,6 +26,7 @@
   * [08 git reset](#08-git-reset)
   * [09 git checkout](#09-git-checkout)
   * [10 git restore](#10-git-restore)
+  * [11 git remote](#11-git-remote)
   * [Soluzioni](#soluzioni)
     * [Soluzione Esercizio 1](#soluzione-esercizio-1)
 <!-- TOC -->
@@ -327,6 +328,36 @@ Ripristiniamo il file dopo averlo modificato:
 ![git-restore-file.png](images/git-restore-file.png)
 
 Abbiamo visto come ottenere gli stessi risultati che abbiamo visto prima con [git reset](#08-git-reset) e con [git checkout](#09-git-checkout) usando un solo comando e semplificando le operazioni.
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#11-git-remote)
+
+## 11 git remote
+
+Il repository su cui abbiamo lavorato nelle sezioni precedenti è stato clonato nella sezione [02 git clone](#02-git-clone).
+Andiamo ad approfondire come git usa il link che abbiamo copiato tramite `git remote`.
+
+* :computer: `git remote -v`
+
+![git-remote-v](images/git-remote-v.png)
+
+Abbiamo 3 informazioni:    
+:one: Origin, è il nome di default assegnato da git al nostro `remote` quando eseguiamo il comando `git clone <url>`, un alias univoco per il remote.   
+:two: L'url che abbiamo copiato per la git clone, indica in maniera univoca il repository remoto.    
+:three: fetch/push indica la modalità con cui andiamo a scaricare/caricare dati nel repository, approfondiremo più avanti questa parte.
+
+Possiamo aggiungere o rimuovere i nostri remote tramite appositi comandi:
+
+* Aggiungiamo un remote fittizio tramite: `git remote add <alias> <url>`
+* Dunque eseguiamo :computer: `git remote add mioRemote  https://github.com/mio-remote/mio-progetto.git`
+* Andiamo a vedere i nostri remote: `git remote -v`
+
+![git-remote-mio-remote.png](images/git-remote-mio-remote.png)
+
+* Rimuoviamo il remote fittizio tramite: `git remote remove <alias>`
+* Dunque lanciamo il comando :computer: `git remote remove mioRemote`
+* :computer: `git remote -v`
+
+![git-remote-v](images/git-remote-v.png)
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#11-git-remote)
 
