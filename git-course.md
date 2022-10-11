@@ -16,7 +16,6 @@
     * [Staged](#staged)
   * [05 git commit](#05-git-commit)
   * [Esercizio 1](#esercizio-1)
-    * [Consegna](#consegna)
   * [06 git rm](#06-git-rm)
     * [Eliminazione file](#eliminazione-file)
     * [Eliminazione file solo da git](#eliminazione-file-solo-da-git)
@@ -34,8 +33,10 @@
     * [Cambiare branch](#cambiare-branch)
   * [16 git merge](#16-git-merge)
   * [17 git merge e conflitti](#17-git-merge-e-conflitti)
+  * [Esercizio 2](#esercizio-2)
   * [Soluzioni](#soluzioni)
     * [Soluzione Esercizio 1](#soluzione-esercizio-1)
+    * [Soluzione Esercizio 2](#soluzione-esercizio-2)
 <!-- TOC -->
 
 ## 01 git init
@@ -52,7 +53,9 @@ Creiamo il nostro primo repository git:
 * Hai inizializzato il tuo primo repository! :partying_face:
 
 Digita `ls -a` o apri esplora risorse, noterai che c'è una nuova cartella :new: `.git`    
-![git init](images/git-init.png)   
+
+![git init](images/git-init.png)
+
 Questa conterrà tutte le informazioni necessarie per versionare il nostro repository.
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#02-git-clone)
@@ -80,7 +83,8 @@ spiegato [nella sezione precedente](#01-git-init)).
 * Apriamo il progetto [precedentemente scaricato](#02-git-clone)
 * Apriamo git bash :computer:
 * Digitiamo `git status`
-  ![git status](images/git-status.png)
+
+![git status](images/git-status.png)
 
 Ci da subito 3 informazioni   
 :one: Il branch in cui siamo `master`    
@@ -100,16 +104,19 @@ Al momento siamo nello stato `Unmodified`, non abbiamo modificato nè aggiunto f
 * Apriamo il file :pencil: `README.MD` e modifichiamo il titolo
 * Salviamo il file :floppy_disk:
 * Digitiamo `git status`, ora siamo nello stato `Modified`
-  ![git-status-modified.png](images/git-status-modified.png)
+
+![git-status-modified.png](images/git-status-modified.png)
 
 #### Untracked
 
 * Aggiungiamo un nuovo file `test.txt`
 * Verifichiamo con `git status`
-  ![git-status-untracked.png](images/git-status-untracked.png)    
-  Come notiamo dall'immagine, abbiamo il file precedente `README.MD` in stato _Modified_ e il nostro nuovo
-  file `test.txt` in stato _Untracked_.     
-  Dunque, git ci sta dicendo che il file `test.txt` non è versionato nel repository e non terrà traccia delle modifiche.
+  
+![git-status-untracked.png](images/git-status-untracked.png)
+
+Come notiamo dall'immagine, abbiamo il file precedente `README.MD` in stato _Modified_ e il nostro nuovo
+file `test.txt` in stato _Untracked_.     
+Dunque, git ci sta dicendo che il file `test.txt` non è versionato nel repository e non terrà traccia delle modifiche.
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#04-git-add)
 
@@ -119,7 +126,8 @@ Analizziamo l'ultimo stato, ovvero *Staged*, aggiungendo il file `test.txt` in s
 
 * Digitiamo `git add test.txt`
 * Controlliamo con `git status`
-  ![git-add.png](images/git-add.png)
+
+![git-add.png](images/git-add.png)
 
 Leggendo la console, git ci comunica che il file è pronto per essere committato (nella sezione _Changes to be
 committed_) e viene dichiarato da git come nuovo (_new file_).    
@@ -137,7 +145,8 @@ Proviamo a modificare il file:
 * Apriamo il file :pencil: `test.txt` e scriviamo `test`
 * Salviamo il file :floppy_disk:
 * Facciamo una verifica con :computer: `git status`
-  ![git-add-file-modified.png](images/git-add-file-modified.png)
+
+![git-add-file-modified.png](images/git-add-file-modified.png)
 
 Troviamo il nostro file in due punti:
 
@@ -159,8 +168,11 @@ Versioniamo le nostre modifiche con il comando di commit:
 
 * Digitiamo  :computer: `git commit -m "aggiunto file di test"`
     * Tramite il flag `-m` definiamo il messaggio per il nostro commit
+    * Il messaggio è obbligatorio oltre che **importante** in quanto descrive cos'abbiamo fatto e verrà letto da tutti i membri del team.
+    * [Best practices & Guidelines](https://initialcommit.com/blog/git-commit-messages-best-practices#what-is-a-commit-message)
 * Verifichiamo con `git status`
-  ![git-commit.png](images/git-commit.png)
+
+![git-commit.png](images/git-commit.png)
 
 Ora abbiamo salvato e dunque **committato** le nostre modifiche.   
 Controllando la console, git ci comunica che abbiamo "1 commit in più" (_ahead of ... by 1 commit_), dunque il commit è
@@ -180,8 +192,6 @@ Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commit_.
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#esercizio-1)
 
 ## Esercizio 1
-
-### Consegna
 
 1. Aggiungi un nuovo file `nome.txt`
     * Scrivi nel file il tuo nome e salvalo
@@ -204,10 +214,12 @@ Abbiamo aggiunto un file che doveva essere eliminato, rimuoviamolo con `git rm`.
 
 * Rimuoviamo il file `README.MD`
 * Eseguiamo il comando `git rm README.MD`
-  ![git-rm](images/git-rm.png)
+  
+![git-rm](images/git-rm.png)
 * Verifichiamo il nostro repository con `ls -a`
 
-  ![git-rm-status.png](images/git-rm-status.png)
+![git-rm-status.png](images/git-rm-status.png)
+
     * Il file è stato rimosso dal nostro progetto e da git
     * Possiamo committarlo (in quanto il file si trova in _Changes to be committed_)
 * Versioniamo le modifiche: `git commit -m "rimosso readme"`
@@ -220,7 +232,8 @@ Vediamo ora come eliminare un file solamente da git, senza cancellarlo dal nostr
 * Spostiamolo in `Staged` con `git add nuovo.txt`
 * Creiamo un commit `git commit -m "nuovo file"`
 * Rimuoviamo ora il file solo da git `git rm --cached nuovo.txt`
-  ![git-rm-cached](images/git-rm-cached.png)
+
+![git-rm-cached](images/git-rm-cached.png)
 
 Nuovamente, troviamo il nostro file in due posizioni:
 
@@ -236,6 +249,8 @@ Salviamo la modifica con un commit: `git commit -m "rimosso file nuovo da git"`
 
 ### Rinominare un file
 
+* Salviamo le modifiche, dunque aggiungiamo il file `git add nuovo.txt`
+* Commit `git commit -m "aggiunto file nuovo"`
 * Creiamo un nuovo file `da_rinominare.txt`
 * Aggiungiamolo a git `git add da_rinominare.txt`
 * Rinominiamo il file `git mv da_rinominare.txt file_rinominato.txt`
@@ -254,9 +269,13 @@ Questo comando può anche spostare un file da una cartella ad un altra.
 
 * Spostiamo il file rinominato dentro **src**: `git mv rinominato.txt src`
 * Git riconosce che il file è stato spostato nella cartella **src**
-  ![git-mv-move-file.png](images/git-mv-move-file.png)
+* :computer: `git status`
+
+  
+![git-mv-move-file.png](images/git-mv-move-file.png)
 * Controlliamo il filesystem con `ls` e `ls src`
-  ![git-mv-move-file-fs.png](images/git-mv-move-file-fs.png)
+
+![git-mv-move-file-fs.png](images/git-mv-move-file-fs.png)
 
 Il file non è più presente nella cartella principale del nostro progetto, è stato spostato correttamente dentro `src`.
 
@@ -282,6 +301,7 @@ Se volessimo togliere i file dall'area di stage e annullare le modifiche fatte p
 * Aggiungiamo nuovamente i file: `git add nuovo.txt src/rinominato.txt`
 * Aggiungiamo un commit `git commit -m "aggiunto nuovo.txt e rinominato.txt"`
 * Controlliamo il repository: `git status`
+
 ![git-reset-hard-status.png](images/git-reset-hard-status.png)
 * Modifichiamo ora i file :pencil: `nuovo.txt` e `rinominato.txt` e salviamoli :floppy_disk:
 * Eseguiamo ora il comando :computer: `git reset --hard HEAD`
@@ -404,7 +424,7 @@ Tipicamente possiamo usare direttamente `git pull` senza prima usare `git fetch`
 
 Rendiamo disponibili le nostre modifiche a tutti, effettuando una push.
 
-* Cloniamo un nuovo repository: `git clone https://github.com/zerob-it/01-git-init-push.git`
+* Cloniamo un nuovo repository `git clone https://github.com/zerob-it/01-git-init-push.git`
 * Apriamo il progetto nel browser [qui](https://github.com/zerob-it/01-git-init-push)
 * Apriamo il progetto con esplora risorse o con l'IDE
 * Aggiungiamo un file con il nostro nome nelle cartella `src/main/resources` e scriviamo all'interno la data odierna
@@ -468,7 +488,7 @@ E' l'unico commit in più (come segnalato dalla console) dato che non abbiamo ef
 Risolviamo un merge in conflitto, unendo il branch `feature/evolutiva` con `develop`:
 * Spostiamoci sul branch `develop`: `git checkout develop`
 * Mergiamo il branch: `git merge origin/feature/evolutiva`
-  * Poniamo `origin/` davanti al nome del branch perchè stiamo mergiando un branch remoto, che punta al `remote` con alias origin.
+  * Poniamo `origin/` davanti al nome del branch perchè stiamo mergiando un branch remoto, che punta al `remote` con alias `origin`.
 
 ![git-merge-conflicts.png](images/git-merge-conflicts.png)
 
@@ -489,7 +509,18 @@ Risolviamo un merge in conflitto, unendo il branch `feature/evolutiva` con `deve
 
 Il conflitto può essere risolto in molti altri modi, tramite i vari IDE, usando il [mergetool](https://git-scm.com/docs/git-mergetool) o altri strumenti grafici che aiutano visivamente nella risoluzione di conflitti.
 
-[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#soluzioni)
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#esercizio-2)
+
+## Esercizio 2
+
+1. Crea un nuovo branch e poi spostati nel nuovo branch
+2. Aggiungi un file nella cartella `src/main/resources`, crea un commit
+3. Rinomina il file e aggiungi un nuovo commit
+4. Spostati su master e fai un merge con il branch creato prima
+
+Una volta completato, puoi verificare [la soluzione qui.](#soluzione-esercizio-2)
+
+[:arrow_up: indice](#indice)
 
 ## Soluzioni
 
@@ -506,3 +537,20 @@ Il conflitto può essere risolto in molti altri modi, tramite i vari IDE, usando
 
 [:arrow_up: indice](#indice) - [:arrow_up: Esercizio 1 :clipboard:](#esercizio-1)
 
+### Soluzione Esercizio 2
+
+1. Crea un nuovo branch e poi spostati nel nuovo branch
+   * Creiamo il branch `git branch nuovoBranch` 
+   * Spostiamoci `git checkout nuovoBranch`
+2. Aggiungi un file nella cartella `src/main/resources`, crea un commit
+   * Creiamo il file `esercizio_2.txt` in `src/main/resources/` 
+   * Muoviamo il file nell'area di stage `git add src/main/resources/esercizio_2.txt`
+   * Commit `git commit -m "aggiunto file per esercizio 2"`
+3. Rinomina il file e aggiungi un nuovo commit
+   * Rinominiamo il file `git mv src/main/resources/esercizio_2.txt src/main/resources/esercizio_2_modificato.txt`
+   * Commit `git commit -m "file rinominato"`
+4. Spostati su master e fai un merge con il branch creato prima
+   * Spostiamoci su master `git checkout master`
+   * Merge `git merge nuovoBranch`
+
+[:arrow_up: indice](#indice) - [:arrow_up: Esercizio 2 :clipboard:](#esercizio-2)
