@@ -36,3 +36,7 @@ https://git-scm.com/
 ### Lista di comandi git
 
 https://git-scm.com/docs
+
+### Approfondimenti e esercizi
+
+https://learngitbranching.js.org/
