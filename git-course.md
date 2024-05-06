@@ -5,6 +5,7 @@
 <!-- TOC -->
 * [Corso git](#corso-git)
   * [Indice](#indice)
+  * [00 Preparazione](#00-preparazione)
   * [01 git init](#01-git-init)
   * [02 git clone](#02-git-clone)
   * [03 git status](#03-git-status)
@@ -38,6 +39,12 @@
     * [Soluzione Esercizio 1](#soluzione-esercizio-1)
     * [Soluzione Esercizio 2](#soluzione-esercizio-2)
 <!-- TOC -->
+
+## 00 Preparazione
+
+Durante il corso, è consigliabile guardare le slides di supporto (teorico) per avere una panoramica più ampia di quanto verrà fatto negli steps successivi. [Clicca qui per le slides](https://github.com/zerob-it/training-git/blob/master/ZeroB-SISTEMI-DI-VERSIONAMENTO-v11_edit_20240506_1200.pptx)
+
+[:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#01-git-init)
 
 ## 01 git init
 
