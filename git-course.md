@@ -3,6 +3,7 @@
 ## Indice
 
 <!-- TOC -->
+<!-- <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small> -->
 * [Corso git](#corso-git)
   * [Indice](#indice)
   * [00 Preparazione](#00-preparazione)
@@ -42,7 +43,7 @@
 
 ## 00 Preparazione
 
-Durante il corso, è consigliabile guardare le slides di supporto (teorico) per avere una panoramica più ampia di quanto verrà fatto negli steps successivi. [Clicca qui per le slides](https://github.com/zerob-it/training-git/blob/master/ZeroB-SISTEMI-DI-VERSIONAMENTO-v11_edit_20240506_1200.pptx)
+Durante il corso, è consigliabile guardare le slides di supporto (teorico) per avere una panoramica più ampia di quanto verrà fatto negli steps successivi. [Clicca qui per le slides](https://github.com/dc-zerob/training-git/blob/master/docs/ZeroB-SISTEMI-DI-VERSIONAMENTO-v11_edit_20240506_1200.pptx)
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#01-git-init)
 
@@ -56,7 +57,7 @@ Creiamo il nostro primo repository git:
   , [7z](https://www.7-zip.org/download.html) o [tramite terminale (unzip)](https://linux.die.net/man/1/unzip)
 * Entra nella cartella `01-git-init`, contiente lo scheletro di un progetto java
 * Apri [git bash](https://gitforwindows.org/) o il tuo terminale preferito :computer: [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.) 
-* Digita `git init`
+* Digita :computer: `git init`
 * Hai inizializzato il tuo primo repository! :partying_face:
 
 Digita `ls -a` o apri esplora risorse, noterai che c'è una nuova cartella :new: `.git`    
@@ -71,10 +72,10 @@ Questa conterrà tutte le informazioni necessarie per versionare il nostro repos
 
 Copiamo un repository esistente tramite git:
 
-* Andiamo ad aprire [questo repository GitHub](https://github.com/zerob-it/01-git-init) :globe_with_meridians:
+* Andiamo ad aprire [questo repository GitHub](https://github.com/dc-zerob/01-git-init) :globe_with_meridians:
 * Apriamo esplora risorse in una nuova cartella
 * Apriamo git bash [nella cartella](https://www.toolsqa.com/git/common-directory-commands-on-git-bash/#:~:text=Open%20Git%20Bash%20directly%20in%20the%20folder&text=For%20this%2C%20go%20to%20the,%3D%3E%20Open%20Git%20Bash%20here.)
-* Digitiamo `git clone https://github.com/zerob-it/01-git-init.git`
+* Digitiamo :computer: `git clone https://github.com/dc-zerob/01-git-init.git`
 * Ora abbiamo scaricato lo stesso progetto che abbiamo aperto poco fa sul browser
 
 Se entriamo nella cartella `01-git-init`, notiamo come prima cosa che c'è già una cartella `.git`.   
@@ -89,7 +90,7 @@ spiegato [nella sezione precedente](#01-git-init)).
 
 * Apriamo il progetto [precedentemente scaricato](#02-git-clone)
 * Apriamo git bash :computer:
-* Digitiamo `git status`
+* Digitiamo :computer: `git status`
 
 ![git status](images/git-status.png)
 
@@ -110,14 +111,14 @@ Al momento siamo nello stato `Unmodified`, non abbiamo modificato nè aggiunto f
 
 * Apriamo il file :pencil: `README.MD` e modifichiamo il titolo
 * Salviamo il file :floppy_disk:
-* Digitiamo `git status`, ora siamo nello stato `Modified`
+* Digitiamo :computer: `git status`, ora siamo nello stato `Modified`
 
 ![git-status-modified.png](images/git-status-modified.png)
 
 #### Untracked
 
 * Aggiungiamo un nuovo file `test.txt`
-* Verifichiamo con `git status`
+* Verifichiamo con :computer: `git status`
   
 ![git-status-untracked.png](images/git-status-untracked.png)
 
@@ -131,8 +132,8 @@ Dunque, git ci sta dicendo che il file `test.txt` non è versionato nel reposito
 
 Analizziamo l'ultimo stato, ovvero *Staged*, aggiungendo il file `test.txt` in stato _Untracked_ al repository git.
 
-* Digitiamo `git add test.txt`
-* Controlliamo con `git status`
+* Digitiamo :computer: `git add test.txt`
+* Controlliamo con :computer: `git status`
 
 ![git-add.png](images/git-add.png)
 
@@ -161,7 +162,7 @@ Troviamo il nostro file in due punti:
 2. _Changes not staged for commit_
 
 Questo perchè git traccia la versione del file precedente alla nostra modifica.   
-Se vogliamo aggiungere le modifiche appena salvate, bisognerà digitare nuovamente `git add test.txt`
+Se vogliamo aggiungere le modifiche appena salvate, bisognerà digitare nuovamente :computer: `git add test.txt`
 
 ![git-add-modified-add.png](images/git-add-modified-add.png)
 
@@ -173,11 +174,11 @@ Ora abbiamo un solo file sotto la voce _Changes to be committed_, che include le
 
 Versioniamo le nostre modifiche con il comando di commit:
 
-* Digitiamo  :computer: `git commit -m "aggiunto file di test"`
+* Digitiamo :computer: `git commit -m "aggiunto file di test"`
     * Tramite il flag `-m` definiamo il messaggio per il nostro commit
     * Il messaggio è obbligatorio oltre che **importante** in quanto descrive cos'abbiamo fatto e verrà letto da tutti i membri del team.
     * [Best practices & Guidelines](https://initialcommit.com/blog/git-commit-messages-best-practices#what-is-a-commit-message)
-* Verifichiamo con `git status`
+* Verifichiamo con :computer: `git status`
 
 ![git-commit.png](images/git-commit.png)
 
@@ -187,14 +188,14 @@ stato creato correttamente.
 
 Salviamo le modifiche del file `README.MD`
 
-* Aggiungiamo il file `git add README.MD`
-* Committiamo con `git commit -m "aggiornato readme"`
-* Controlliamo tramite `git status`
+* Aggiungiamo il file :computer: `git add README.MD`
+* Committiamo con :computer: `git commit -m "aggiornato readme"`
+* Controlliamo tramite :computer: `git status`
 
 ![img.png](images/git-commit-readme.png)
 
 Abbiamo completato il nostro secondo commit :white_check_mark:.    
-Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commit_.
+Git ci avvisa tramite la console: _ahead of 'origin/master' by 2 commits_.
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#esercizio-1)
 
@@ -217,28 +218,28 @@ Una volta completato, puoi verificare [la soluzione qui.](#soluzione-esercizio-1
 
 ### Eliminazione file
 
-Abbiamo aggiunto un file che doveva essere eliminato, rimuoviamolo con `git rm`.
+Abbiamo aggiunto un file che doveva essere eliminato, rimuoviamolo con :computer: `git rm`.
 
 * Rimuoviamo il file `README.MD`
-* Eseguiamo il comando `git rm README.MD`
+* Eseguiamo il comando :computer: `git rm README.MD`
   
 ![git-rm](images/git-rm.png)
 * Verifichiamo il nostro repository con `ls -a`
 
 ![git-rm-status.png](images/git-rm-status.png)
 
-    * Il file è stato rimosso dal nostro progetto e da git
-    * Possiamo committarlo (in quanto il file si trova in _Changes to be committed_)
-* Versioniamo le modifiche: `git commit -m "rimosso readme"`
+* Il file è stato rimosso dal nostro progetto e da git
+* Possiamo committarlo (in quanto il file si trova in _Changes to be committed_)
+* Versioniamo le modifiche :computer:  `git commit -m "rimosso readme"`
 
 ### Eliminazione file solo da git
 
 Vediamo ora come eliminare un file solamente da git, senza cancellarlo dal nostro progetto.
 
 * Aggiungiamo un nuovo file `nuovo.txt`
-* Spostiamolo in `Staged` con `git add nuovo.txt`
-* Creiamo un commit `git commit -m "nuovo file"`
-* Rimuoviamo ora il file solo da git `git rm --cached nuovo.txt`
+* Spostiamolo in `Staged` con :computer: `git add nuovo.txt`
+* Creiamo un commit :computer: `git commit -m "nuovo file"`
+* Rimuoviamo ora il file solo da git :computer: `git rm --cached nuovo.txt`
 
 ![git-rm-cached](images/git-rm-cached.png)
 
@@ -248,7 +249,8 @@ Nuovamente, troviamo il nostro file in due posizioni:
 * **Untracked files**: Come abbiamo visto con [git status](#untracked), i file untracked non verranno versionati da git.
 
 Dunque il nostro file non verrà più preso in considerazione da git, ma non verrà eliminato dal nostro pc.    
-Salviamo la modifica con un commit: `git commit -m "rimosso file nuovo da git"`
+Salviamo la modifica aggiungendo nuovamente il file a git :computer:  `git add nuovo.txt"`    
+In questo modo abbiamo ripristinato il file allo stato in cui era prima che lo cancellassimo da git, annullando di fatto le modifiche.     
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#07-git-mv)
 
@@ -256,12 +258,10 @@ Salviamo la modifica con un commit: `git commit -m "rimosso file nuovo da git"`
 
 ### Rinominare un file
 
-* Salviamo le modifiche, dunque aggiungiamo il file `git add nuovo.txt`
-* Commit `git commit -m "aggiunto file nuovo"`
 * Creiamo un nuovo file `da_rinominare.txt`
-* Aggiungiamolo a git `git add da_rinominare.txt`
-* Rinominiamo il file `git mv da_rinominare.txt file_rinominato.txt`
-* Verifichiamo lo stato `git status`
+* Aggiungiamolo a git :computer: `git add da_rinominare.txt`
+* Rinominiamo il file :computer: `git mv da_rinominare.txt rinominato.txt`
+* Verifichiamo lo stato :computer: `git status`
 
 ![git-mv.png](images/git-mv.png)
 
@@ -274,7 +274,7 @@ Il file è stato correttamente rinominato.
 
 Questo comando può anche spostare un file da una cartella ad un altra.
 
-* Spostiamo il file rinominato dentro **src**: `git mv rinominato.txt src`
+* Spostiamo il file rinominato dentro **src** :computer: `git mv rinominato.txt src`
 * Git riconosce che il file è stato spostato nella cartella **src**
 * :computer: `git status`
 
@@ -292,30 +292,32 @@ Il file non è più presente nella cartella principale del nostro progetto, è s
 
 Rimuoviamo un file aggiunto in area di staging:
 
-* Controlliamo lo stato del repository `git status`
+* Controlliamo lo stato del repository :computer: `git status`
 
 ![git-mv-move-file.png](images/git-mv-move-file.png)
 * Possiamo usare il file `src/rinominato`
-* Rimuoviamo il file dalla _staging area_: `git reset HEAD src/rinominato`
+* Rimuoviamo il file dalla _staging area_ :computer: `git reset HEAD src/rinominato`
   * `HEAD` indica l'ultimo commit del nostro repository locale.
-* Andiamo a verificare: `git status`
+* Andiamo a verificare :computer: `git status`
 
 Il file è stato rimosso corretamente e lo ritroviamo sotto la voce `Untracked files`.
 ![git-reset-head.png](images/git-reset-head.png)
 
 Se volessimo togliere i file dall'area di stage e annullare le modifiche fatte potremmo usare il flag `--hard`.
 
-* Aggiungiamo nuovamente i file: `git add nuovo.txt src/rinominato.txt`
-* Aggiungiamo un commit `git commit -m "aggiunto nuovo.txt e rinominato.txt"`
-* Controlliamo il repository: `git status`
+* Aggiungiamo il file :computer: `git add src/rinominato.txt`
+* Aggiungiamo un commit :computer: `git commit -m "aggiunto rinominato.txt"`
+* Controlliamo il repository :computer: `git status`
 
 ![git-reset-hard-status.png](images/git-reset-hard-status.png)
-* Modifichiamo ora i file :pencil: `nuovo.txt` e `rinominato.txt` e salviamoli :floppy_disk:
+* Modifichiamo ora i file :pencil: `nuovo.txt` e `src/rinominato.txt` scrivendo al loro interno: `da annullare con git reset` e salviamoli :floppy_disk:
+* Verifichiamo lo stato :computer: `git status`
+![](images/git-reset-git-status-before-git-reset-hard.png)
 * Eseguiamo ora il comando :computer: `git reset --hard HEAD`
   * In questo caso non indichiamo il file perchè andiamo ad annullare le modifiche di tutto il repository
-* `git status`
+* :computer: `git status`
 
-![git-reset-hard-status.png](images/git-reset-hard-status.png)
+![](images/git-reset-hard-status.png)
 
 Siamo nella stessa situazione in cui eravamo post commit. Questo perchè tutti i file del repository sono stati rimossi dall'area di stage e le loro modifiche sono state annullate.
 
@@ -325,7 +327,7 @@ Siamo nella stessa situazione in cui eravamo post commit. Questo perchè tutti i
 
 Tramite `git reset` abbiamo annullato le modifiche di tutto il repository, vediamo come annullare le modifiche di un solo file.
 
-* Apriamo il file :pencil: `nuovo.txt` e salviamolo :floppy_disk:
+* Apriamo il file `nuovo.txt`, scriviamo :pencil: `test` e salviamolo :floppy_disk:
 * Facciamo lo stesso per `src/rinominato.txt` e salviamolo :floppy_disk:
 * :computer: `git status`
 
@@ -348,15 +350,16 @@ Se volete saperne di più, vi consiglio di approfondirli sulla guida ufficiale:
 
 Per semplificare i due comandi e restringere le operazioni che possono svolgere, sono stati introdotti vari comandi tra cui [git restore](https://git-scm.com/docs/git-restore). Vediamo come rimuovere il file dall'area di stage con questo comando:
 
-* Aggiungiamo il file `src/rinominato.txt` nella staging area: `git add src/rinominato.txt`
-* Ora rimuoviamolo tramite il nuovo comando restore: `git restore --staged file`
+* Aggiungiamo il file `src/rinominato.txt` nella staging area :computer: `git add src/rinominato.txt`
+* Ora rimuoviamolo tramite il nuovo comando restore :computer: `git restore --staged file`
 * :computer: `git status`
 
-![git-checkout-file.png](images/git-checkout-file.png)
+![git-checkout-file.png](images/git-checkout-file.png)      
+Il file è stato rimosso dalla staging area correttamente tramite `git restore`.
 
 Ripristiniamo il file dopo averlo modificato:
-* Apriamo il file :pencil: `src/rinominato.txt`, scriviamoci e salviamolo :floppy_disk:
-* Ripristiniamo il file `git restore src/rinominato.txt`
+* Apriamo il file :pencil: `src/rinominato.txt`, scriviamo `da ripristinare` e salviamolo :floppy_disk:
+* Ripristiniamo il file :computer: `git restore src/rinominato.txt`
 
 ![git-restore-file.png](images/git-restore-file.png)
 
@@ -381,8 +384,8 @@ Abbiamo 3 informazioni:
 Possiamo aggiungere o rimuovere i nostri remote tramite appositi comandi:
 
 * Aggiungiamo un remote fittizio tramite `git remote add <alias> <url>`
-* Dunque eseguiamo :computer: `git remote add mioRemote  https://github.com/mio-remote/mio-progetto.git`
-* Mostriamo la lista di remote `git remote -v`
+* Dunque eseguiamo :computer: `git remote add mioRemote https://github.com/mio-remote/mio-progetto.git`
+* Mostriamo la lista di remote :computer: `git remote -v`
 
 ![git-remote-mio-remote.png](images/git-remote-mio-remote.png)
 
@@ -401,10 +404,14 @@ E' ciò che permette a [git status](#03-git-status) di identificare i commit nuo
 
 Per questa casistica andiamo a simulare che qualcuno abbia aggiunto un commit al repository spostandoci nella storia di git:
 
-* Cloniamo il progetto `git clone https://github.com/zerob-it/01-git-init-fetch.git`
-* Eseguiamo questo script `git reset --hard HEAD^1`
-* Lanciamo il comando di fetch `git fetch`
-* Ora controlliamo con `git status`
+* Andiamo alla cartella padre del progetto attuale per poter effettuare la clone.
+  * Tramite esplora risorse saliamo di un livello e ripriamo la git-bash.
+  * Oppure tramite la git-bash digitiamo :computer: `cd ..`
+* Cloniamo il progetto :computer: `git clone https://github.com/dc-zerob/01-git-init-fetch.git`
+* Entriamo nella cartella del repository :computer: `cd 01-git-init-fetch`
+* Eseguiamo questo script (_ignoriamo per ora il suo funzionamento_) :computer: `git reset --hard HEAD^1`
+* Lanciamo il comando di fetch :computer: `git fetch`
+* Ora controlliamo con :computer: `git status`
 
 ![git-fetch-status.png](images/git-fetch-status.png)
 
@@ -416,8 +423,8 @@ Ci suggerisce di usare `git pull` che vediamo nella prossima sezione.
 ## 13 git pull
 
 Includiamo le modifiche scaricate da git-fetch nel nostro repository:
-* :computer: `git pull`
-* Verifichiamo con `git status`
+* Lanciamo il comando :computer: `git pull`
+* Verifichiamo con :computer: `git status`
 
 ![git-pull](images/git-pull.png)
 
@@ -431,13 +438,16 @@ Tipicamente possiamo usare direttamente `git pull` senza prima usare `git fetch`
 
 Rendiamo disponibili le nostre modifiche a tutti, effettuando una push.
 
-* Cloniamo un nuovo repository `git clone https://github.com/zerob-it/01-git-init-push.git`
-* Apriamo il progetto nel browser [qui](https://github.com/zerob-it/01-git-init-push)
+* Andiamo alla cartella padre del progetto attuale per poter effettuare la clone.
+    * Tramite esplora risorse saliamo di un livello e ripriamo la git-bash.
+    * Oppure tramite la git-bash digitiamo :computer: `cd ..`
+* Cloniamo un nuovo repository :computer: `git clone https://github.com/dc-zerob/01-git-init-push.git`
+* Apriamo il progetto nel browser [qui](https://github.com/dc-zerob/01-git-init-push)
 * Apriamo il progetto con esplora risorse o con l'IDE
 * Aggiungiamo un file con il nostro nome nelle cartella `src/main/resources` e scriviamo all'interno la data odierna
-* Spostiamo il file nella staging area, es: `git add nome.txt`
-* Commit: `git commit -m 'aggiunto il file nome`
-* Ora rendiamo disponibile il file a tutti: `git push`
+* Spostiamo il file nella staging area, es :computer:  `git add nome.txt`
+* Commit :computer:  `git commit -m 'aggiunto il file nome`
+* Ora rendiamo disponibile il file a tutti :computer:  `git push`
 * Verifichiamo nel browser il nostro file, entrando nella cartella `src/main/resources`
 
 ![git-push-browser.png](images/git-push-browser.png)
@@ -448,11 +458,11 @@ Rendiamo disponibili le nostre modifiche a tutti, effettuando una push.
 ## 15 git branch
 
 Tramite il comando [git-branch](https://git-scm.com/docs/git-branch) possiamo visualizzare il branch corrente o crearne di nuovi.
-* Guardiamo il branch in cui siamo: `git branch`
+* Guardiamo il branch in cui siamo :computer:  `git branch`
 
 ![git-branch-check-branch.png](images/git-branch-check-branch.png)
-* Creiamo un nuovo branch: `git branch nuovo`
-* Verifichiamo il branch creato: `git branch`
+* Creiamo un nuovo branch :computer: `git branch nuovo`
+* Verifichiamo il branch creato :computer: `git branch`
 
 ![git-branch-new-branch.png](images/git-branch-new-branch.png)
 
@@ -462,26 +472,26 @@ Il secondo in bianco, rappresenta il branch appena creato.
 ### Cambiare branch
 
 Per spostarci di branch possiamo usare il comando di [checkout](https://git-scm.com/docs/git-checkout).
-* Cambiamo branch: `git checkout nuovo`
-* Controlliamo il branch: `git branch`
+* Cambiamo branch :computer: `git checkout nuovo`
+* Controlliamo il branch :computer: `git branch`
 
 ![git-branch-checkout.png](images/git-branch-checkout.png)
 
 Come evidenziato dalla console, il branch attuale è il branch: `nuovo`.
 
-_Si possono unire queste due operazioni in un comando unico tramite [git-checkout](https://git-scm.com/docs/git-checkout): `git checkout -b nomebranch`_
+_Si possono unire queste due operazioni in un comando unico tramite [git-checkout](https://git-scm.com/docs/git-checkout) :computer:  `git checkout -b nomebranch`_
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#16-git-merge)
 
 ## 16 git merge
 
 Uniamo due branch:
-* Aggiungiamo un file merge.txt
-* Scriviamoci all'interno 'merge' e salviamolo :floppy_disk:
+* Aggiungiamo un file `merge.txt`
+* Scriviamo all'interno `merge` e salviamolo :floppy_disk:
 * Aggiungiamo il file all'area di stage: `git add merge.txt`
-* Commit: `git commit -m "aggiunto merge.txt"`
-* Spostiamoci su master: `git checkout master`
-* Uniamo il branch `nuovo` con `master`: `git merge nuovo`
+* Commit :computer: `git commit -m "aggiunto merge.txt"`
+* Spostiamoci su master :computer: `git checkout master`
+* Uniamo il branch `nuovo` con `master` :computer: `git merge nuovo`
 
 ![git-branch](images/git-merge-nuovo.png)
 
@@ -493,8 +503,8 @@ E' l'unico commit in più (come segnalato dalla console) dato che non abbiamo ef
 ## 17 git merge e conflitti
 
 Risolviamo un merge in conflitto, unendo il branch `feature/evolutiva` con `develop`:
-* Spostiamoci sul branch `develop`: `git checkout develop`
-* Mergiamo il branch: `git merge origin/feature/evolutiva`
+* Spostiamoci sul branch `develop` :computer: `git checkout develop`
+* Mergiamo il branch :computer: `git merge origin/feature/evolutiva`
   * Poniamo `origin/` davanti al nome del branch perchè stiamo mergiando un branch remoto, che punta al `remote` con alias `origin`.
 
 ![git-merge-conflicts.png](images/git-merge-conflicts.png)
@@ -509,8 +519,8 @@ Risolviamo un merge in conflitto, unendo il branch `feature/evolutiva` con `deve
 ![git-merge-conflicts-resolved.png](images/git-merge-conflicts-resolved.png)
 
 * Salviamo il file :floppy_disk:
-* Aggiungiamolo all'area di stage: `git add src/main/java/it/zerob/sample/Sample.java`
-* Completiamo il merge con un nuovo commit: `git commit -m "mergiato il branch feature/evolutiva"`
+* Aggiungiamolo all'area di stage :computer: `git add src/main/java/it/zerob/sample/Sample.java`
+* Completiamo il merge con un nuovo commit :computer: `git commit -m "mergiato il branch feature/evolutiva"`
 
 ![git-merge-conflicts-commit.png](images/git-merge-conflicts-commit.png)
 
