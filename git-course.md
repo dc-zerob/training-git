@@ -43,7 +43,18 @@
 
 ## 00 Preparazione
 
-Durante il corso, è consigliabile guardare le slides di supporto (teorico) per avere una panoramica più ampia di quanto verrà fatto negli steps successivi. [Clicca qui per le slides](https://github.com/dc-zerob/training-git/blob/master/docs/ZeroB-SISTEMI-DI-VERSIONAMENTO-v11_edit_20240506_1200.pptx)
+1. Durante il corso, è consigliabile guardare le slides di supporto (teorico) per avere una panoramica più ampia di quanto verrà fatto negli steps successivi. [Clicca qui per le slides](https://github.com/dc-zerob/training-git/blob/master/docs/ZeroB-SISTEMI-DI-VERSIONAMENTO-v11_edit_20240506_1200.pptx)
+1. Sarà necessario anche avere git installato.
+   1. Per Windows: https://git-scm.com/download/win.
+   1. Per MacOS https://git-scm.com/download/mac.
+   1. Per linux: https://git-scm.com/download/linux
+1. Una volta installato configuriamo **nome e email**:
+   1. Presta attenzione, dovrai sostituire **nome e email con i tuoi dati personali**! 
+   1. Aprire il terminale in una cartella e digitare: `git config --global user.name "Mario Rossi"`
+   1. Aprire il terminale in una cartella e digitare: `git config --global user.email "mario.rossi@zerob.it"`
+   1. Per verificare di aver fatto tutto correttamente basterà digitare: `git config user.name` e `git config user.email`
+   1. Se l'output corrisponde al nostro utente abbiamo terminato.
+![](images/git_config_user_email.png)
 
 [:arrow_up: indice](#indice) - [prossima sezione :arrow_heading_down:](#01-git-init)
 
@@ -222,6 +233,7 @@ Abbiamo aggiunto un file che doveva essere eliminato, rimuoviamolo con :computer
 
 * Rimuoviamo il file `README.MD`
 * Eseguiamo il comando :computer: `git rm README.MD`
+* Verifichiamo :computer: `git status`
   
 ![git-rm](images/git-rm.png)
 * Verifichiamo il nostro repository con `ls -a`
@@ -240,6 +252,7 @@ Vediamo ora come eliminare un file solamente da git, senza cancellarlo dal nostr
 * Spostiamolo in `Staged` con :computer: `git add nuovo.txt`
 * Creiamo un commit :computer: `git commit -m "nuovo file"`
 * Rimuoviamo ora il file solo da git :computer: `git rm --cached nuovo.txt`
+* Verifichiamo :computer: `git status`
 
 ![git-rm-cached](images/git-rm-cached.png)
 
@@ -360,6 +373,7 @@ Il file è stato rimosso dalla staging area correttamente tramite `git restore`.
 Ripristiniamo il file dopo averlo modificato:
 * Apriamo il file :pencil: `src/rinominato.txt`, scriviamo `da ripristinare` e salviamolo :floppy_disk:
 * Ripristiniamo il file :computer: `git restore src/rinominato.txt`
+* :computer: `git status`
 
 ![git-restore-file.png](images/git-restore-file.png)
 
@@ -521,6 +535,7 @@ Risolviamo un merge in conflitto, unendo il branch `feature/evolutiva` con `deve
 * Salviamo il file :floppy_disk:
 * Aggiungiamolo all'area di stage :computer: `git add src/main/java/it/zerob/sample/Sample.java`
 * Completiamo il merge con un nuovo commit :computer: `git commit -m "mergiato il branch feature/evolutiva"`
+* :computer: `git status`
 
 ![git-merge-conflicts-commit.png](images/git-merge-conflicts-commit.png)
 
